@@ -1,26 +1,82 @@
-@import "tailwindcss";
-
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* ===== Sun Shining Global UI ===== */
+:root{
+  --text:#0f172a; --bg:#f8fafc; --muted:#475569; --white:#fff;
+  --brand:#0ea5e9; /* sky-500 */
+  --radius:16px;
+  --shadow-sm:0 2px 10px rgba(0,0,0,.06);
+  --shadow-md:0 8px 24px rgba(0,0,0,.10);
+  --container:1120px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* base */
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,'Nunito Sans','Noto Sans TC',sans-serif;color:var(--text);background:var(--bg)}
+a{text-decoration:none;color:inherit}
+a:hover{color:var(--brand)}
+:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+/* layout */
+.container{max-width:var(--container);margin:0 auto;padding:0 20px}
+.section{padding:64px 0}
+.prose{max-width:72ch}
+.main{min-height:calc(100vh - 140px);}
+
+/* header background:var(--brand)*/
+.header{position:sticky;top:0;z-index:10;background:#ffffffcc;backdrop-filter:saturate(1.2) blur(6px);border-bottom:1px solid #e5e7eb}
+.nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:12px 0}
+.navLinks{display:flex;gap:14px;flex-wrap:wrap}
+.brand{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.2px}
+.brandMark{width:24px;height:24px;border-radius:6px;background:transparent;background-image:url('/sunshining-logo.svg');background-size:contain;background-repeat:no-repeat;background-position:center}
+.brandName{font-size:18px}
+
+/* hero */
+.hero{background:linear-gradient(135deg,#e2f2ff,#f5fbff);border-bottom:1px solid #e5e7eb}
+.heroInner{display:flex;align-items:center;min-height:300px;padding:40px 0}
+.hero h1{margin:0 0 8px;letter-spacing:-.02em;font-size:clamp(28px,4.6vw,44px)}
+.subtle{opacity:.82}
+
+/* buttons */
+.btn{padding:12px 16px;border-radius:var(--radius);border:1px solid #e5e7eb;font-weight:700;transition:all .18s ease}
+.btn:hover{transform:translateY(-1px)}
+.btnPrimary{background:var(--brand);color:white;border-color:var(--brand);box-shadow:var(--shadow-sm)}
+.btnGhost{background:transparent}
+
+/* cards */
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;padding:12px 0}
+.card{background:white;border:1px solid #e8eaed;border-radius:var(--radius);padding:18px;box-shadow:var(--shadow-sm);transition:transform .18s ease,box-shadow .18s ease}
+.card:hover{transform:translateY(-2px);box-shadow:var(--shadow-md)}
+
+/* footer */
+.footer{background:#0b1324;color:white;margin-top:40px}
+.footerInner{display:flex;align-items:center;justify-content:space-between;gap:10px;padding:16px 0;flex-wrap:wrap}
+.footer a{color:white;opacity:.9}
+.footer a:hover{opacity:1;text-decoration:underline}
+
+/* === Sun Shining hero (yellow/blue, subtle texture) === */
+.heroSun {
+  background:
+    radial-gradient(80% 100% at 0% 0%, rgba(255, 220, 124, .35), transparent 60%),
+    radial-gradient(70% 90% at 100% 10%, rgba(56, 189, 248, .28), transparent 60%),
+    linear-gradient(135deg, #fffef6, #f5fbff);
+  border-bottom: 1px solid #e5e7eb;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+.heroInner {
+  display: grid;
+  grid-template-columns: 1.4fr .8fr;
+  align-items: center;
+  min-height: 320px;
+  gap: 28px;
+  padding: 56px 0;
+}
+@media (max-width: 900px) { .heroInner { grid-template-columns: 1fr; padding: 44px 0; } }
+
+.heroLogo {
+  justify-self: center;
+  background: white;
+  border: 1px solid #e8eaed;
+  border-radius: 16px;
+  padding: 16px;
+  box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
-}
