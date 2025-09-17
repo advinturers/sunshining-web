@@ -1,12 +1,13 @@
 import './globals.css';
 import type { Metadata, Viewport } from 'next';
+import Link from 'next/link';
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || 'https://sun-shining.com';
 const SITE_NAME = 'Sunshining Professional Company Limited';
-const OG_IMAGE = `${SITE_URL}/og-image.png`; // 若尚未放圖，可先建立占位圖
+const OG_IMAGE = `${SITE_URL}/og-image.png`;
 
 export const viewport: Viewport = {
-  themeColor: '#0ea5e9',              // 與品牌色一致
+  themeColor: '#0ea5e9',
   colorScheme: 'light',
   width: 'device-width',
   initialScale: 1,
@@ -14,16 +15,11 @@ export const viewport: Viewport = {
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: {
-    default: SITE_NAME,
-    template: '%s | Sunshining',
-  },
+  title: { default: SITE_NAME, template: '%s | Sunshining' },
   description:
     'Innovation across technology & lifestyle projects — Advinturers and Drunk Bees. Based in Hong Kong.',
   applicationName: 'Sunshining',
-  alternates: {
-    canonical: '/',
-  },
+  alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     url: SITE_URL,
@@ -31,14 +27,7 @@ export const metadata: Metadata = {
     title: SITE_NAME,
     description:
       'Innovation across technology & lifestyle projects — Advinturers and Drunk Bees.',
-    images: [
-      {
-        url: OG_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: 'Sunshining — Technology & Lifestyle Projects',
-      },
-    ],
+    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: 'Sunshining — Technology & Lifestyle Projects' }],
     locale: 'en_HK',
   },
   twitter: {
@@ -55,15 +44,7 @@ export const metadata: Metadata = {
     ],
     apple: [{ url: '/apple-touch-icon.png' }],
   },
-  keywords: [
-    'Sunshining',
-    'Advinturers',
-    'Drunk Bees',
-    'wine app',
-    'Hong Kong',
-    'technology',
-    'lifestyle',
-  ],
+  keywords: ['Sunshining', 'Advinturers', 'Drunk Bees', 'wine app', 'Hong Kong', 'technology', 'lifestyle'],
   category: 'technology',
 };
 
@@ -74,10 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/sunshining-logo.svg`,
-    sameAs: [
-      'https://advinturers-web.vercel.app',
-      'https://www.drunkbees.com',
-    ],
+    sameAs: ['https://advinturers-web.vercel.app', 'https://www.drunkbees.com'],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Room 5, 4/F., Energy Plaza, 92 Granville Road',
@@ -106,11 +84,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 
         {/* JSON-LD (Organization) */}
-        <script
-          type="application/ld+json"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
       </head>
       <body>
         {/* Skip link for accessibility */}
@@ -120,11 +94,12 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 
         <header className="header">
           <nav className="container nav" aria-label="Primary">
-            <a href="/" className="brand" aria-label="Sunshining Home">
+            <Link href="/" className="brand" aria-label="Sunshining Home">
               <span className="brandMark" aria-hidden="true" />
               <span className="brandName">Sunshining</span>
-            </a>
+            </Link>
             <div className="navLinks">
+              {/* 同頁錨點可維持 <a> 不會觸發 no-html-link-for-pages */}
               <a href="#about">About</a>
               <a href="#projects">Projects</a>
               <a href="#values">Why Us</a>
@@ -141,14 +116,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container footerInner">
             <div>© {new Date().getFullYear()} Sunshining Professional Company Limited</div>
             <div className="footerLinks">
-              <a href="https://advinturers-web.vercel.app" target="_blank" rel="noreferrer">
-                Advinturers
-              </a>
-			  <a> | </a>
-              <a href="https://www.drunkbees.com" target="_blank" rel="noreferrer">
-                Drunk Bees
-              </a>
-              
+              <a href="https://advinturers-web.vercel.app" target="_blank" rel="noreferrer">Advinturers</a>
+              <span aria-hidden="true"> | </span>
+              <a href="https://www.drunkbees.com" target="_blank" rel="noreferrer">Drunk Bees</a>
             </div>
           </div>
         </footer>
