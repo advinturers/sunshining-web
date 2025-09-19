@@ -80,3 +80,37 @@ a:hover{color:var(--brand)}
   box-shadow: 0 8px 24px rgba(0,0,0,.08);
 }
 
+/* --- Section divider (淡紫色，小巧置中) --- */
+:root{
+  /* 若已經有品牌色，保持一致；沒有就加入這行 */
+  --accent-lilac: #C5C4E0;
+  --footer-grad-start: #0ea5e9; /* sky-500 */
+  --footer-grad-end: #0369a1;   /* sky-700 */
+}
+
+.sectionDivider{
+  width: 64px;
+  height: 3px;
+  margin: 8px auto 0; /* 緊貼上個 section 與下個 section */
+  background: var(--accent-lilac);
+  border: 0;
+  border-radius: 999px;
+  opacity: .9;
+}
+
+/* --- Footer 漸層 + 微陰影 --- */
+.footer{
+  background: linear-gradient(180deg, var(--footer-grad-start) 0%, var(--footer-grad-end) 100%);
+  color: #fff;
+}
+.footer .footerInner{
+  border-top: 1px solid rgba(255,255,255,0.12);
+}
+.footer a{
+  color: #fff;
+  opacity: .92;
+}
+.footer a:hover{
+  opacity: 1;
+  text-decoration: underline;
+}

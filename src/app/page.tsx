@@ -1,14 +1,10 @@
 import Link from 'next/link';
 
+// src/app/page.tsx
 export const metadata = {
   title: 'Sunshining Professional Company Limited',
   description:
     'Innovation across technology & lifestyle projects — Advinturers and Drunk Bees. Based in Hong Kong.',
-};
-
-const mobilePadStyle: React.CSSProperties = {
-  // extra gutters for small screens so text doesn't hug the edges
-  paddingInline: 'clamp(16px, 5vw, 28px)',
 };
 
 export default function Page() {
@@ -16,15 +12,15 @@ export default function Page() {
     <>
       {/* HERO */}
       <section className="hero heroSun">
-        <div className="container heroInner" style={mobilePadStyle}>
+        <div className="container heroInner">
           <div className="heroLeft">
             <h1>Sunshining Professional Company Limited</h1>
             <p className="subtle">
               Empowering wine & lifestyle through technology — based in Hong Kong.
             </p>
             <div className="ctaRow" style={{ marginTop: 14 }}>
-              <Link className="btn btnPrimary" href="#projects">Our Projects</Link>
-              <Link className="btn btnGhost" href="#contact">Contact</Link>
+              <a className="btn btnPrimary" href="#projects">Our Projects</a>
+              <a className="btn btnGhost" href="#contact">Contact</a>
             </div>
           </div>
 
@@ -39,20 +35,23 @@ export default function Page() {
       </section>
 
       {/* ABOUT */}
-      <section id="about" className="container section" style={mobilePadStyle}>
+      <section id="about" className="container section">
         <h2>About Us</h2>
         <div className="prose">
           <p>
-            Sunshining Professional Company Limited is formed by a team of professionals
-            from information technology and other diverse fields. By combining technology
-            with our shared passion and knowledge of wine, we aim to showcase and promote
-            wine culture to a broader community.
+            Sunshining Professional Company Limited is formed by a team of professionals from
+            information technology and other diverse fields. By combining technology with our
+            shared passion and knowledge of wine, we aim to showcase and promote wine culture
+            to a broader community.
           </p>
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="sectionDivider" aria-hidden="true" />
+
       {/* PROJECTS */}
-      <section id="projects" className="container section" style={mobilePadStyle}>
+      <section id="projects" className="container section">
         <h2>Our Projects</h2>
         <div className="cards">
           <a className="card" href="https://advinturers-web.vercel.app" target="_blank" rel="noreferrer">
@@ -67,8 +66,11 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="sectionDivider" aria-hidden="true" />
+
       {/* VALUES */}
-      <section id="values" className="container section" style={mobilePadStyle}>
+      <section id="values" className="container section">
         <h2>Why Us</h2>
         <div className="cards" style={{ gridTemplateColumns: '1fr 1fr 1fr' }}>
           <div className="card">
@@ -87,7 +89,7 @@ export default function Page() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" className="container section" style={mobilePadStyle}>
+      <section id="contact" className="container section">
         <h2>Contact</h2>
         <div className="card">
           <p><strong>Company:</strong> Sunshining Professional Company Limited</p>
