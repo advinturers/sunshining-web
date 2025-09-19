@@ -16,7 +16,7 @@ export default function Page() {
         <div className="container heroInner">
           <div className="heroLeft">
             <h1>Sunshining Professional Company Limited</h1>
-            <p className="subtle" style={{ marginBottom: 50 }}>
+            <p className="subtle" style={{ marginBottom: 80 }}>
               Empowering wine & lifestyle through technology
             </p>
             <div className="ctaRow">
