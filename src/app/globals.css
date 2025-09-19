@@ -114,3 +114,42 @@ a:hover{color:var(--brand)}
   opacity: 1;
   text-decoration: underline;
 }
+
+/* === Fix: mobile edge padding & safe-area === */
+
+/* 1) 統一容器左右內距（含瀏海安全區） */
+.container {
+  /* 用 clamp 讓手機更寬鬆、桌機不誇張 */
+  padding-inline: clamp(18px, 5vw, 24px);
+  /* 加上瀏海安全區（iPhone） */
+  padding-left: calc(clamp(18px, 5vw, 24px) + env(safe-area-inset-left, 0px));
+  padding-right: calc(clamp(18px, 5vw, 24px) + env(safe-area-inset-right, 0px));
+}
+
+/* 2) 確保 HERO 內也有足夠左右留白（有些版面用到 heroInner） */
+.heroInner {
+  padding-inline: clamp(18px, 5vw, 24px);
+}
+
+/* 3) 區塊上下間距在小螢幕略收斂、但留白仍舒適 */
+.section {
+  padding-block: clamp(36px, 8vw, var(--section-y, 68px));
+}
+
+/* 4) 卡片在手機上加一點內距，避免文字貼邊 */
+.card {
+  padding: clamp(14px, 3.8vw, 20px);
+}
+
+/* 5) 標題在小螢幕縮一點，避免行長太滿 */
+@media (max-width: 420px) {
+  h1 { font-size: clamp(24px, 7vw, 32px); }
+  h2 { font-size: clamp(20px, 5.8vw, 26px); }
+  .subtle { font-size: 0.95rem; }
+}
+
+/* 6) 導覽列在小螢幕保持呼吸感 */
+.nav {
+  padding-block: 12px;
+  padding-inline: clamp(12px, 4.5vw, 20px);
+}
