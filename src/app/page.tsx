@@ -88,6 +88,9 @@ export default function Page() {
         </div>
       </section>
 
+      {/* Divider */}
+      <hr className="sectionDivider" aria-hidden="true" />
+
       {/* CONTACT */}
       <section id="contact" className="container section">
         <h2>Contact</h2>
