@@ -16,9 +16,10 @@ export default function Page() {
           <div className="heroLeft">
             <h1>Sunshining Professional Company Limited</h1>
             <p className="subtle">
-              Empowering wine & lifestyle through technology — based in Hong Kong.
+              Empowering wine & lifestyle through technology
             </p>
             <div className="ctaRow" style={{ marginTop: 14 }}>
+			  <a />
               <a className="btn btnPrimary" href="#projects">Our Projects</a>
               <a className="btn btnGhost" href="#contact">Contact</a>
             </div>
