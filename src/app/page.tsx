@@ -7,6 +7,7 @@ export const metadata = {
     'Innovation across technology & lifestyle projects — Advinturers and Drunk Bees. Based in Hong Kong.',
 };
 
+//<div className="ctaRow" style={{ marginTop: 14 }}>
 export default function Page() {
   return (
     <>
@@ -18,9 +19,8 @@ export default function Page() {
             <p className="subtle">
               Empowering wine & lifestyle through technology
             </p>
-            <div className="ctaRow" style={{ marginTop: 14 }}>
-			  <a />
-              <a className="btn btnPrimary" href="#projects">Our Projects</a>
+            <div className="ctaRow">
+			  <a className="btn btnPrimary" href="#projects">Our Projects</a>
               <a className="btn btnGhost" href="#contact">Contact</a>
             </div>
           </div>
