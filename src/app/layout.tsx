@@ -55,7 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     name: SITE_NAME,
     url: SITE_URL,
     logo: `${SITE_URL}/sunshining-logo.svg`,
-    sameAs: ['https://advinturers-web.vercel.app', 'https://www.drunkbees.com'],
+    sameAs: ['https://www.advinturers.com', 'https://www.drunkbees.com'],
     address: {
       '@type': 'PostalAddress',
       streetAddress: 'Room 5, 4/F., Energy Plaza, 92 Granville Road',
