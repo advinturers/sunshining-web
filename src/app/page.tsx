@@ -55,7 +55,7 @@ export default function Page() {
       <section id="projects" className="container section">
         <h2>Our Projects</h2>
         <div className="cards">
-          <a className="card" href="https://advinturers-web.vercel.app" target="_blank" rel="noreferrer">
+          <a className="card" href="https://www.advinturers.com" target="_blank" rel="noreferrer">
             <h3>Advinturers</h3>
             <p>A mobile app for wine lovers to organize, document, and share tasting journeys.</p>
           </a>
