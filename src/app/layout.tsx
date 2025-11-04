@@ -68,7 +68,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         '@type': 'ContactPoint',
         contactType: 'customer support',
         email: 'info@sun-shining.com',
-        telephone: '+852 1234 5678',
+        telephone: '+852 5629 6767',
         areaServed: 'HK',
         availableLanguage: ['en', 'zh-Hant'],
       },
@@ -116,7 +116,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <div className="container footerInner">
             <div>© {new Date().getFullYear()} Sunshining Professional Company Limited</div>
             <div className="footerLinks">
-              <a href="https://advinturers-web.vercel.app" target="_blank" rel="noreferrer">Advinturers</a>
+              <a href="https://www.advinturers.com" target="_blank" rel="noreferrer">Advinturers</a>
               <span aria-hidden="true"> | </span>
               <a href="https://www.drunkbees.com" target="_blank" rel="noreferrer">Drunk Bees</a>
             </div>
